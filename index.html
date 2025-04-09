@@ -3,41 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <hgroup>
-        <h1>Reseñas gastronómicas</h1>
-        <h2>Introducción</h2>
-    </hgroup>
-    <p> Bienvenidos a <b>GastroCrítica</b>, el lugar donde los amantes 
-        de la buena comida encuentran las mejores recomendaciones y 
-        reseñas sobre restaurantes, cafeterías y lugares gastronómicos.
-        Ya seas un entusiasta de la cocina <big>local</big> o estés buscando una 
-        experiencia culinaria <i>internacional</i>, aquí encontrarás reseñas 
-        detalladas, valoraciones de los platillos, y opiniones sinceras 
-        de expertos y comensales. Nuestro objetivo es ayudarte a 
-        descubrir nuevos sabores, conocer las últimas tendencias 
-        gastronómicas y brindarte una guía confiable para elegir el 
-        lugar perfecto para tu próxima salida culinaria. 
-        <small>¡Explora, saborea y comparte tu experiencia con nosotros!</small>
-    </p>
+    <header class="header"> 
+        <div class="nombre-sitio"><a href="index.html">APPeritivo</a></div> 
+        <div class="navegacion"> 
+            <ul class="listado"> 
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="restaurantes.html">Restaurantes</a></li>
+            <li><a href="resenya.html">Reseñas</a></li>
+            <li><a href="favoritos.html">Favoritos</a></li>
+            <li><a href="recetas.html">Recetas</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div> 
+    </header>
+    <section class="inicio">
+        <div class="descripcion">
+            <p> Bienvenidos a <b>Apperitivo</b>, el lugar donde los amantes 
+                de la buena comida encuentran las mejores recomendaciones y 
+                reseñas sobre restaurantes, cafeterías y lugares gastronómicos.
+                Ya seas un entusiasta de la cocina <big>local</big> o estés buscando una 
+                experiencia culinaria <i>internacional</i>, aquí encontrarás reseñas 
+                detalladas, valoraciones de los platillos, y opiniones sinceras 
+                de expertos y comensales. Nuestro objetivo es ayudarte a 
+                descubrir nuevos sabores, conocer las últimas tendencias 
+                gastronómicas y brindarte una guía confiable para elegir el 
+                lugar perfecto para tu próxima salida culinaria. 
+                <small>¡Explora, saborea y comparte tu experiencia con nosotros!</small>
+            </p>
+        </div>
+    </section>
 
-    <br>
-   
-<img src="https://weekend-bucket.s3.amazonaws.com/Top_10_de_las_mejores_hamburguesas_en_Bucaramanga_f6b63864b2.jpg">
-<hr>
-    <h3>Comentarios</h3>
-<pre>Lugar: Hamburguesas Manolete.
-Atención: buena/rápida.
-Precio: 15,99 <sub>€</sub>
-Comentario: Muy buena hamburguesa, grande, buen sabor y acompañada por una salsa espectacular!
-Imagen:
-<img src="https://weekend-bucket.s3.amazonaws.com/3_4935208e43.jpg">
-    </pre>
-    <sub></sub>
-    <sup></sup>
-    <!--Comentar el codigo-->
+    <div class="container">
+        <div class="lista-restaurantes">
+            <h2>Lista de Restaurantes por Categoría</h2>
+            <div class="tipos-comida">
+                <h3>Tipos de Comida</h3>
+                <ol>
+                    <li>Italiana</li>
+                    <li>Mexicana</li>
+                    <li>Japonesa</li>
+                    <li>Vegana</li>
+                </ol>
+            </div>
+            <div class="restaurantes-recomendados">
+                <h3>Restaurantes recomendados:</h3>
+                <ul>
+                    <li><a href="https://warynessy.com" target="_blank">Warynessy</a></li>
+                    <li><a href="https://la-isla.metro.rest/?lang=es" target="_blank">La isla</a></li>
+                    <li><a href="https://www.lampadini.es/" target="_blank">L'Ampadini</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    
+        <div class="tabla-restaurantes">
+            <h2>Tabla de Restaurantes por Categoría</h2>
+            <table border="2px">
+                <thead>
+                    <tr>
+                        <th>Restaurante</th>
+                        <th>Tipo de Comida</th>
+                        <th>Precio</th>
+                        <th>Valoración</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Warynessy</td>
+                        <td>Mediterráneo</td>
+                        <td>Medio</td>
+                        <td>Buena</td>
+                    </tr>
+                    <tr>
+                        <td>La isla</td>
+                        <td>Tradicional</td>
+                        <td>Barato</td>
+                        <td>Poco buenas</td>
+                    </tr>
+                    <tr>
+                        <td>L'Ampadini</td>
+                        <td>Italiana</td>
+                        <td>Caro</td>
+                        <td>Muy buenas</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">Las valoraciones están basadas en reseñas de usuarios.</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
 
+    <div class="buscador">
+        <div class="formulario">
+            <h2>Busca tu Restaurante Ideal</h2>
+            <form action="#" method="GET">
+                <div class="tipo-comida">
+                    <label for="tipo">Tipo de comida</label>
+                    <select id="tipo" name="type">
+                        <option value="italiana">Italiana</option>
+                        <option value="mexicana">Mexicana</option>
+                        <option value="japonesa">Japonesa</option>
+                        <option value="vegana">Vegana</option>
+                    </select>
+                </div>
+                <div class="ubicacion">
+                    <label for="ubicacion">Ubicación</label>
+                    <input type="text" id="ubicacion" name="ubicacion" placeholder="Ciudad, barrio...">
+                </div>
+                <div class="rango-precios">
+                    <label for="precios">Rango de precios</label>
+                    <select id="precios" name="precios">
+                        <option value="barato">Barato</option>
+                        <option value="medio">Medio</option>
+                        <option value="caro">Caro</option>
+                    </select>
+                </div>
+                    <button>Enviar</button>
+            </form>
+        </div>
+    </div>
+    
+    
+    
+
+    <hr>
+    
 </body>
 </html>

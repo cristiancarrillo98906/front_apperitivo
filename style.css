@@ -1,0 +1,426 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #222;
+    color: white;
+    line-height: 1.6;
+}
+.header {
+    background-color: #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.nombre-sitio {
+    font-size: 28px;
+    color: #ff6600;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.nombre-sitio:hover{
+    color: #ff9600;
+}
+.navegacion ul {
+    list-style: none;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+}
+.navegacion ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 12px;
+    transition: all 0.3s;
+    border-radius: 5px;
+    margin-right: 25px;
+}
+.navegacion ul li a:hover {
+    background-color: #ff9600;
+    color: #222;
+}
+.inicio{
+    background: url('imagenes/hamburguesa.jpg') no-repeat center center/cover;
+    height: 80vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+    background-size: cover;
+    box-shadow: inset 0 0 300px rgba(0, 0, 0, 0.8);
+}
+.hamburguesa {
+    display: flex;
+    align-self: center;
+    width: 50%;
+    height: 300px;
+    object-fit: cover;
+    min-width: 300px;
+    min-height: 300px;
+    background: url(imagenes/hamburguesa.jpg) center center / cover no-repeat fixed;
+    flex: 1 1 0%;
+    border-radius: 17px;
+}
+.descripcion {
+    display: flex;
+    width: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 15px;
+    min-width: 200px;
+    line-height: 1.2;
+    color: white;
+    text-align: justify;
+}
+.descripcion p, .contacto p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #f5f5f5;
+    padding: 0px 20px;
+}
+.descripcion b{
+    color: #ff6600;
+}
+.descripcion i{
+    font-style: italic;
+    color: #ffcc00;
+}
+.descripcion big {
+    font-size: 18px;
+    color: #ffcc00;
+}
+.descripcion small {
+    font-size: 0.9rem;
+    color: #fff;
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+}
+.buscador{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin: 30px auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    color: #222;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+button {
+    background-color: #ff9600;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #ff6600;
+}
+.lista-restaurantes{
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    color: #222;
+    max-width: 500px;
+    
+}
+h3{
+    color: #333;
+    margin-top: 20px;
+}
+ol{
+    text-align: left;
+    padding-left: 20px;
+    list-style: circle;
+}
+ul{
+    text-align: left;
+    padding-left: 20px; 
+    list-style: decimal;  
+}
+
+li {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #ff9600;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ff6600;
+}
+
+.tabla-restaurantes {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+}
+table {
+    background-color: #aaa;
+    color: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #333;
+}
+tfoot {
+    background-color: #ff9600;
+    font-style: italic;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    padding: 15px;
+}
+.contacto{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    padding: 20px;
+    margin: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+.contacto p{
+    color: #333;
+    text-align: left;
+    font-size: 16px;
+}
+.form-contacto{
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+.form-contacto label{
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    text-align: left;
+    width: 100%;
+}
+.form-contacto input, .form-contacto textarea {
+    width: auto;
+    margin-right: 5px;
+}
+.form-contacto input[type="checkbox"], .form-contacto input[type="radio"] {
+    width: auto;
+    margin-right: 5px;
+}
+.form-contacto button{
+    background-color: #ff9600;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 7px;
+    width: 250px;
+}
+.form-contacto button:hover {
+    background-color: #ff6600;
+}
+.form-nombre{
+    display: flex;
+    margin-top: 20px;
+}
+.form-correo, .form-telefono, .form-fecha{
+    display: flex;
+    margin-top: 10px;
+}
+.form-nombre label, .form-correo label, .form-telefono label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
+}
+.form-sugerencia{
+    margin: 0px 10px;
+}
+.form-sugerencia textarea{
+    padding: 10px;
+}
+.form-novedades, .form-preferencias, .form-adjunto{
+    text-align: left;
+    margin: 0px 10px;
+}
+.form-fecha label{
+    margin-right: 10px;
+    margin: 10px;
+}
+.inferior{
+    display: flex;
+    justify-content: space-around;
+}
+.img-inferior{
+    margin-top: 70px;
+}
+.img-inferior img{
+    border-radius: 15px;
+    filter: saturate(1.2);
+}
+.container-restaurante{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    background: white;
+    margin-top: 20vh;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-radius:12px;
+    text-align:center;
+    width:100%;
+    max-width: 1000px;
+}
+.container-restaurante h1{
+    color: #333;
+    text-transform: uppercase;
+}
+button.btn-detalles {
+    background-color: #e97911; /* Color azul característico de macOS */
+    color: white; /* Texto blanco */
+    border: 1px solid white; /* Borde del mismo color que el fondo */
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 10px 20px;
+    margin:2px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    outline: none; /* Eliminar borde al enfocar */
+    transition: background-color 0.3s, border-color 0.3s; /* Transición suave */
+}
+
+button.btn-detalles:hover {
+    background-color: #10a383; /* Color más oscuro al pasar el ratón */
+    border-color: white; /* Cambio de borde al pasar el ratón */
+}
+
+button.btn-detalles:active {
+    background-color: #10a383; /* Color más oscuro cuando se hace clic */
+    border-color: white; /* Cambio de borde cuando se hace clic */
+}
+
+button.btn-detalles:focus {
+    outline: none; /* Eliminar el borde azul cuando se hace focus en el botón */
+}
+.botones{
+    margin: 10px;
+}
+
+#edit-button{
+    background-color: #17a571; /* Color azul característico de macOS */
+    color: white; /* Texto blanco */
+    border: 1px solid white; /* Borde del mismo color que el fondo */
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 10px 20px;
+    margin:2px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    outline: none; /* Eliminar borde al enfocar */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+#edit-button:hover{
+    background-color: #e97911;
+}
+#delete-button{
+    background-color: red; /* Color azul característico de macOS */
+    color: white; /* Texto blanco */
+    border: 1px solid white; /* Borde del mismo color que el fondo */
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 10px 20px;
+    margin:2px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    outline: none; /* Eliminar borde al enfocar */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+#delete-button:hover{
+    background-color: black;
+}

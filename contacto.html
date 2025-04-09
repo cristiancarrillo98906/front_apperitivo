@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header"> 
+        <div class="nombre-sitio"><a href="index.html">APPeritivo</a></div> 
+        <div class="navegacion"> 
+            <ul class="listado"> 
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#search">Restaurantes</a></li>
+            <li><a href="#reviews">Reseñas</a></li>
+            <li><a href="#favorites">Favoritos</a></li>
+            <li><a href="#offers">Ofertas</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div> 
+    </header>
+    <div class="inferior">
+        <div class="contacto">
+            <h2>Formulario de Contacto</h2>
+            <p>Si tienes alguna sugerencia, por favor ponte en contacto: </p>
+            <form action="#" method="POST" class="form-contacto">
+                <div class="form-nombre">
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required> <br><br>
+                </div>
+                <div class="form-correo">
+                    <label for="correo">Correo Electrónico: </label>
+                    <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required><br><br>
+                </div>
+                <div class="form-telefono">
+                    <label for="telefono">Teléfono: </label>
+                    <input type="number" id="telefono" name="telefono" placeholder="123-456-7890"> <br><br>
+                </div>
+                <div class="form-fecha">
+                    <label for="fechavisit">Fecha de Visita:</label>
+                    <input type="date" id="fechavisit" name="date"> <br><br>
+                </div>
+                <div class="form-preferencias">
+                    <label for="preferencias">Tus Preferencias Alimenticias: </label>
+                    <input type="radio" id="vegano" name="preferences" value="vegan"> Vegano
+                    <input type="radio" id="vegetariano" name="preferences" value="vegetarian"> Vegetariano
+                    <input type="radio" id="carniboro" name="preferences" value="carnivore"> Carnívoro <br><br>
+                </div>
+                <div class="form-novedades">
+                    <label for="subcribete">¿Te gustaría recibir nuestras novedades?</label>
+                    <input type="checkbox" id="subcribete" name="subcribete" value="sí"> Sí <br><br>
+                </div>
+                <div class="form-adjunto">
+                    <label for="imagen">¿Desea adjuntar una referencia del plato?</label>
+                    <input type="file" id="imagen" name="imagen"> <br><br>
+                </div>
+                <div class="form-sugerencia">
+                    <label for="opinion">Sugerencia: </label> <br>
+                    <textarea id="opinion" name="opinion" rows="5" cols="60" placeholder="Ingresa aca tu sugerencia.."></textarea> <br><br>
+                </div>
+                <div>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Borrar</button>
+                </div>
+            </form>
+        </div>
+        <div class="img-inferior">
+        <img src="https://weekend-bucket.s3.amazonaws.com/3_4935208e43.jpg">
+        </div>
+    </div>
+</body>
+</html>
