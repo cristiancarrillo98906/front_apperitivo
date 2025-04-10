@@ -331,6 +331,7 @@ tfoot {
 .inferior{
     display: flex;
     justify-content: space-around;
+    margin-top: 70px;
 }
 .img-inferior{
     margin-top: 70px;
@@ -354,6 +355,42 @@ tfoot {
     width:100%;
     max-width: 1000px;
 }
+.container-restaurante-nuevo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    background: white;
+    margin-top: 20vh;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-radius:12px;
+    text-align:center;
+    width:100%;
+    max-width: 700px;
+}
+.container-restaurante-nuevo h1{
+    text-transform: uppercase;
+}
+.container-restaurante-nuevo h1, strong, span{
+    color: #333;
+}
+.container-restaurante-nuevo #descripcion{
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.container-restaurante-nuevo #nombre, #ubicacion, #descripcion, #propietario {
+    width: 60vh;
+    margin: auto;
+}
+.container-restaurante button{
+    margin: auto;
+    padding: 50px;
+    text-align: center;
+    max-width: 130px;
+}
 .container-restaurante h1{
     color: #333;
     text-transform: uppercase;
@@ -364,7 +401,8 @@ button.btn-detalles {
     border: 1px solid white; /* Borde del mismo color que el fondo */
     border-radius: 12px; /* Bordes redondeados */
     padding: 10px 20px;
-    margin:2px;
+    margin:auto;
+    margin-bottom: 5px;
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
@@ -372,18 +410,35 @@ button.btn-detalles {
     outline: none; /* Eliminar borde al enfocar */
     transition: background-color 0.3s, border-color 0.3s; /* Transición suave */
 }
-
-button.btn-detalles:hover {
-    background-color: #10a383; /* Color más oscuro al pasar el ratón */
+button.btn-detalles-guardar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e97911; /* Color azul característico de macOS */
+    color: white; /* Texto blanco */
+    border: 1px solid white; /* Borde del mismo color que el fondo */
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 10px 20px;
+    margin:auto;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    outline: none; /* Eliminar borde al enfocar */
+    transition: background-color 0.3s, border-color 0.3s; /* Transición suave */
+}
+button.btn-detalles:hover, button.btn-detalles-guardar:hover {
+    background-color: #ff6600; /* Color más oscuro al pasar el ratón */
     border-color: white; /* Cambio de borde al pasar el ratón */
 }
 
-button.btn-detalles:active {
-    background-color: #10a383; /* Color más oscuro cuando se hace clic */
+button.btn-detalles:active, button.btn-detalles-guardar:hover {
+    background-color: #ea660d; /* Color más oscuro cuando se hace clic */
     border-color: white; /* Cambio de borde cuando se hace clic */
 }
 
-button.btn-detalles:focus {
+button.btn-detalles:focus, button.btn-detalles-guardar:hover {
     outline: none; /* Eliminar el borde azul cuando se hace focus en el botón */
 }
 .botones{
@@ -391,7 +446,7 @@ button.btn-detalles:focus {
 }
 
 #edit-button{
-    background-color: #17a571; /* Color azul característico de macOS */
+    background-color: #0a8437; /* Color azul característico de macOS */
     color: white; /* Texto blanco */
     border: 1px solid white; /* Borde del mismo color que el fondo */
     border-radius: 12px; /* Bordes redondeados */

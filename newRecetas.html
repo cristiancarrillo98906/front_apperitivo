@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Receta</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header class="header"> 
+        <div class="nombre-sitio"><a href="index.html">APPeritivo</a></div> 
+        <div class="navegacion"> 
+            <ul class="listado"> 
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="restaurantes.html">Restaurantes</a></li>
+                <li><a href="resenya.html">Reseñas</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="recetas.html">Recetas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div> 
+    </header>
+    <div class="container-restaurante-nuevo">
+        <h1>Nueva Receta</h1>
+        <form onsubmit="crearReceta(event)">
+            <input type="text" id="titulo" placeholder="Título" required>
+            <br>
+            <input type="text" id="ingredientes" placeholder="Ingredientes" required>
+            <br>
+            <input type="text" id="instrucciones" placeholder="Instruccion" required>
+            <br>
+            <button type="submit" class="btn-detalles-guardar">Guardar</button>
+        </form>
+        <button class="btn-detalles" onclick="window.location.href='recetas.html'">Cancelar</button>
+    </div>
+    <script>
+        function crearReceta(e){
+            e.preventDefault()
+            const titulo = document.getElementById("titulo").value
+            const ingredientes = document.getElementById("ingredientes").value
+            const instrucciones = document.getElementById("instrucciones").value
+
+            fetch("http://localhost:4050/recetas",{
+                    method:"POST",
+                    headers:{"Content-Type":"application/json"},
+                    body:JSON.stringify({titulo,ingredientes,instrucciones}) //@RequestBody
+                })
+                .then(function(respuestaTextoPlano){
+                    return respuestaTextoPlano.json()
+                })
+                .then(function(data){
+                    console.log(data)
+                    Swal.fire({
+                        title: "¡Insertado!",
+                        text: "¡Receta creada con éxito!",
+                        icon: "success"
+                    })
+                    .then(function(){
+                            window.location.href="recetas.html"
+                        })
+                })
+                .catch(function(error){
+                    console.log(error)
+                    Swal.fire({
+                        title: "¡Error!",
+                        text: error,
+                        icon: "error"
+                    });
+                })
+        }
+    </script>
+</body>
+</html>

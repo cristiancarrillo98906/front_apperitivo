@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar receta</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header class="header"> 
+        <div class="nombre-sitio"><a href="index.html">APPeritivo</a></div> 
+        <div class="navegacion"> 
+            <ul class="listado"> 
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="restaurantes.html">Restaurantes</a></li>
+                <li><a href="resenya.html">Reseñas</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="recetas.html">Recetas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div> 
+        titulo
+        Ingredientes
+        instrucciones
+    </header>
+    <div class="container-restaurante-nuevo">
+        <h1>Editar Receta</h1>
+        <form onsubmit="editarReceta(event)">
+            <input type="text" id="titulo" placeholder="Título" required>
+            <br>
+            <input type="text" id="ingredientes" placeholder="Ingredientes" required>
+            <br>
+            <input type="text" id="instrucciones" placeholder="Instruccion" required>
+            <br>
+            <button type="submit" class="btn-detalles-guardar">Editar</button>
+        </form>
+        <button class="btn-detalles" onclick="window.location.href='recetas.html'">Cancelar</button>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search)
+        const idReceta = urlParams.get("id")
+
+        function editarReceta(e){
+            e.preventDefault()
+            const titulo = document.getElementById("titulo").value
+            const ingredientes = document.getElementById("ingredientes").value
+            const instrucciones = document.getElementById("instrucciones").value
+
+            fetch("http://localhost:4050/recetas/" + idReceta,{
+                    method:"PUT",
+                    headers:{"Content-Type":"application/json"},
+                    body:JSON.stringify({titulo,ingredientes,instrucciones})
+                })
+                .then(function(respuestaTextoPlano){
+                    return respuestaTextoPlano.json()
+                })
+                .then(function(data){
+                    console.log(data)
+                    Swal.fire({
+                        title: "Actualizado!",
+                        text: "¡Receta actualizada con éxito!",
+                        icon: "success"
+                    })
+                    .then(function(){
+                            window.location.href="recetas.html"
+                        })                    
+                })
+                .catch(function(error){
+                    console.log(error)
+                    Swal.fire({
+                        title: "¡Error!",
+                        text: error,
+                        icon: "error"
+                    });
+                })
+        }
+
+        function cargarDetallesRecetas(){
+            fetch("http://localhost:4050/recetas/" + idReceta)
+            .then(function(respuestaTextoPlano){
+                return respuestaTextoPlano.json()
+            })
+            .then(function(detalles){
+                console.log(detalles)
+                document.getElementById("titulo").value = detalles.titulo
+                document.getElementById("ingredientes").value = detalles.ingredientes
+                document.getElementById("instrucciones").value = detalles.instrucciones            
+            })
+            .catch(function(error){
+                console.log("Error en detalles", error)
+            })
+        }
+        cargarDetallesRecetas()
+    </script>
+</body>
+</html>

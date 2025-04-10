@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseña</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header class="header"> 
+        <div class="nombre-sitio"><a href="index.html">APPeritivo</a></div> 
+        <div class="navegacion"> 
+            <ul class="listado"> 
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="restaurantes.html">Restaurantes</a></li>
+                <li><a href="resenya.html">Reseñas</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="recetas.html">Recetas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div> 
+    </header>
+    <div class="container-restaurante-nuevo">
+        <h1 id="nombre-reseña"></h1>
+        <div>
+            <strong>Valoracion:</strong>
+            <span id="valoracion"></span>
+        </div>
+        <div>
+            <strong>Usuario:</strong>
+            <span id="idUsuario"></span>
+        </div>
+        <div>
+            <strong>Restaurante:</strong>
+            <span id="idRestaurante"></span>
+        </div>
+        <div>
+            <strong>Fecha:</strong>
+            <span id="fecha"></span>
+        </div>
+        <div>
+            <strong>Comentario:</strong>
+            <span id="comentario"></span>
+        </div>
+        <br>
+        <button class="btn-detalles" onclick="window.history.back()">Volver</button>        
+    </div>
+
+    <script>
+        function cargarDetallesReseña(){
+            const urlParams = new URLSearchParams(window.location.search)
+            const id = urlParams.get("id")
+
+            fetch("http://localhost:4050/review/" + id)
+            .then(function(respuestaTextoPlano){
+                return respuestaTextoPlano.json()
+            })
+            .then(function(detalles){
+                document.getElementById("nombre-reseña").innerText = detalles.fecha
+                document.getElementById("valoracion").innerText = detalles.valoracion
+                document.getElementById("idUsuario").innerText = detalles.idUsuario
+                document.getElementById("idRestaurante").innerText = detalles.idRestaurante
+                //document.getElementById("fecha").innerText = detalles.instrucciones
+                document.getElementById("comentario").innerText = detalles.comentario
+            })
+        }
+        cargarDetallesReseña()
+    </script>
+</body>
+</html>

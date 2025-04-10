@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Reseña</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header class="header"> 
+        <div class="nombre-sitio"><a href="index.html">APPeritivo</a></div> 
+        <div class="navegacion"> 
+            <ul class="listado"> 
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="restaurantes.html">Restaurantes</a></li>
+                <li><a href="resenya.html">Reseñas</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="recetas.html">Recetas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div> 
+    </header>
+    <div class="container-restaurante-nuevo">
+        <h1>Nueva Reseña</h1>
+        <form onsubmit="crearReview(event)">
+            <input type="text" id="valoracion" placeholder="Valoracion..." required>
+            <input type="number" id="idUsuario" placeholder="Usuario..." required>
+            <input type="number" id="idRestaurante" placeholder="Restaurante..." required>
+            <input type="date" id="fecha" placeholder="Fecha..." required>
+            <textarea rows="4" cols="50" id="comentario" placeholder="Comentario..."></textarea>
+            <br>
+            <button type="submit" class="btn-detalles">Guardar</button>
+        </form>
+        <button class="btn-detalles" onclick="window.location.href='resenya.html'">Cancelar</button>
+    </div>
+    <script>
+        function crearReview(e){
+            e.preventDefault()
+            const valoracion = document.getElementById("valoracion").value
+            const idUsuario = document.getElementById("idUsuario").value
+            const idRestaurante = document.getElementById("idRestaurante").value
+            const fecha = document.getElementById("fecha").value
+            const comentario = document.getElementById("comentario").value
+
+            fetch("http://localhost:4050/review",{
+                method:"POST",
+                headers:{"Content-Type":"application/json"}, 
+                body:JSON.stringify({valoracion,idUsuario,idRestaurante,fecha, comentario})
+            })
+            .then(function(respuetaTextoPlano){
+            return respuetaTextoPlano.json()
+            })
+            .then(function(data){
+                console.log(data);
+                Swal.fire({
+                    title: "¡Insertado!",
+                    text: "¡Reseña creada con exito!",
+                    icon: "success"
+                }).then(function(){window.location.href="resenya.html"})
+                
+                })
+                .catch(function(error){
+                    Swal.fire({
+                        title: "Error!",
+                        text: error,
+                        icon: "error"
+                    });     
+                })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Restaurante</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header class="header"> 
+        <div class="nombre-sitio"><a href="index.html">APPeritivo</a></div> 
+        <div class="navegacion"> 
+            <ul class="listado"> 
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="restaurantes.html">Restaurantes</a></li>
+                <li><a href="resenya.html">Reseñas</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="recetas.html">Recetas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div> 
+    </header>
+    <div class="container-restaurante-nuevo">
+        <h1>Nuevo Restaurante</h1>
+        <form onsubmit="crearRestaurante(event)">
+            <input type="text" id="nombre" placeholder="Nombre" required>
+            <br>
+            <input type="text" id="ubicacion" placeholder="Ubicación" required>
+            <br>
+            <textarea id="descripcion" required placeholder="Descripción del Restaurante"></textarea>
+            <br>
+            <input type="text" id="propietario" placeholder="Propietario" required>
+            <br>
+            <button type="submit" class="btn-detalles-guardar">Guardar</button>
+        </form>
+        <button class="btn-detalles" onclick="window.location.href='restaurantes.html'">Cancelar</button>
+    </div>
+    <script>
+        function crearRestaurante(e){
+            e.preventDefault()
+            const nombre = document.getElementById("nombre").value
+            const ubicacion = document.getElementById("ubicacion").value
+            const descripcion = document.getElementById("descripcion").value
+            const propietario = document.getElementById("propietario").value
+
+            fetch("http://localhost:4050/restaurantes",{
+                    method:"POST",
+                    headers:{"Content-Type":"application/json"},
+                    body:JSON.stringify({nombre,ubicacion,descripcion,propietario}) //@RequestBody
+                })
+                .then(function(respuestaTextoPlano){
+                    return respuestaTextoPlano.json()
+                })
+                .then(function(data){
+                    console.log(data)
+                    Swal.fire({
+                        title: "¡Insertado!",
+                        text: "¡Restaurante creado con éxito!",
+                        icon: "success"
+                    })
+                    .then(function(){
+                            window.location.href="restaurantes.html"
+                        })
+                })
+                .catch(function(error){
+                    console.log(error)
+                    Swal.fire({
+                        title: "¡Error!",
+                        text: error,
+                        icon: "error"
+                    });
+                })
+        }
+    </script>
+</body>
+</html>

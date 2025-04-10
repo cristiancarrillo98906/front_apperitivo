@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <title>Detalles de la Receta</title>
+</head>
+<body>
+    <header class="header"> 
+        <div class="nombre-sitio"><a href="index.html">APPeritivo</a></div> 
+        <div class="navegacion"> 
+            <ul class="listado"> 
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="restaurantes.html">Restaurantes</a></li>
+                <li><a href="resenya.html">Reseñas</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="recetas.html">Recetas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div> 
+    </header>
+    <div class="container-restaurante">
+        <h1 id="nombre-receta"></h1>
+        <div>
+            <strong>Ingredientes:</strong>
+            <span id="ingredientes"></span>
+        </div>
+        <div>
+            <strong>Instrucciones:</strong>
+            <span id="instrucciones"></span>
+        </div>
+        <br>
+        <button class="btn-detalles" onclick="window.history.back()">Volver</button>        
+    </div>
+
+    <script>
+        function cargarDetallesReceta(){
+            const urlParams = new URLSearchParams(window.location.search)
+            const id = urlParams.get("id")
+
+            fetch("http://localhost:4050/recetas/" + id)
+            .then(function(respuestaTextoPlano){
+                return respuestaTextoPlano.json()
+            })
+            .then(function(detalles){
+                document.getElementById("nombre-receta").innerText = detalles.titulo
+                document.getElementById("ingredientes").innerText = detalles.ingredientes
+                document.getElementById("instrucciones").innerText = detalles.instrucciones
+            })
+        }
+        cargarDetallesReceta()
+    </script>
+</body>
+</html>

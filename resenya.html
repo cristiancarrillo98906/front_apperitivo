@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Restaurantes</title>
+    <title>Reseña</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -22,25 +22,25 @@
         </div> 
     </header>
     <div class="container-restaurante">
-        <h1>Restaurantes</h1>
-        <div class="botones">
-           <!--  <button class="btn-detalles" onclick="window.location.href='index.html'">Volver al Inicio</button>  -->
-            <button class="btn-detalles" onclick="window.location.href='newRestaurante.html'">Nuevo Restaurante</button>
-        </div>
+        <h1>Reseñas</h1>
+        <button class="btn-detalles" onclick="window.location.href='newResenya.html'">Nueva Reseña</button>
         <table>
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Nombre</th>
-                    <th>Ubicación</th>
+                    <th>Usuario</th>
+                    <th>Restaurante</th>
+                    <th>Valoracion</th>
+                    <th>Fecha</th>
                     <th></th>
                 </tr>
             </thead>
-            <tbody id="restaurantes-body">
-                <!-- Cargaremos dinámicamente el contenido JSON (BackEnd) -->
+            <tbody id="reseña-body">
+                <!--Cargaremos dinamicamente el JSON-->
             </tbody>
         </table>
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>
