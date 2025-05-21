@@ -479,3 +479,56 @@ button.btn-detalles:focus, button.btn-detalles-guardar:hover {
 #delete-button:hover{
     background-color: black;
 }
+.carrusel {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+.carrusel .imagenes img {
+    display: none;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease-in-out;
+}
+.carrusel .imagenes img.activo {
+    display: block;
+}
+.carrusel .btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+.btn.anterior {
+    left: 0;
+}
+.btn.siguiente {
+    right: 0;
+}
+.novedades{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #222;
+    margin: auto;
+    text-align: center;
+    /*background-color: #aaa;  #ffeecc */
+    background: #ff9600;
+    background: linear-gradient(circle,rgba(255,150,0,1)0%, rgba(34,34,34,1)100%);
+    padding: 15px;
+}
+.novedades h2{
+    color: #222;
+    
+    
+}
+.novedades h3 {
+    color: #222;
+}
