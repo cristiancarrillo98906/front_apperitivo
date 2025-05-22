@@ -12,7 +12,7 @@ body {
     line-height: 1.6;
 }
 .header {
-    background-color: #222;
+    background-color: #111;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -513,12 +513,22 @@ button.btn-detalles:focus, button.btn-detalles-guardar:hover {
     right: 0;
 }
 .novedades{
+    margin-top: 50px;
+    text-align: center;
+    background: #ff9600;
+    padding: 10px;
+}
+.novedades h2{
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+.novedad{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     color: #222;
-    margin: auto;
-    text-align: center;
+    margin: 10px;
+    text-align: justify;
     /*background-color: #aaa;  #ffeecc */
     background: #ff9600;
     background: linear-gradient(circle,rgba(255,150,0,1)0%, rgba(34,34,34,1)100%);
@@ -531,4 +541,57 @@ button.btn-detalles:focus, button.btn-detalles-guardar:hover {
 }
 .novedades h3 {
     color: #222;
+}
+.footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 14px;
+    position: relative;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+}
+.opiniones{
+    background-color: #444;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+}
+.opiniones h2{
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+.opiniones strong{
+    color: #ff6600;
+}
+.opiniones_usuarios{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.opinion{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: space-between;
+    max-width: 25%;
+    max-height: 40%;
+    color: #222;
+    text-align: start;
+    padding: 17px;
+    border-radius: 10px;
+    margin:5px;
+}
+.mapa h2{
+    color: white;
+    text-transform: unset;
+    text-align: center;
+}
+.galeria h2{
+    color: white;
+    text-transform: unset;
+    text-align: center;
+    margin: 20px auto 20px auto;
 }

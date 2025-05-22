@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apperitivo</title>
+    <link rel="icon" href="./favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <!-- Leaflet CSS y JS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /> <!-- NUEVO -->
@@ -18,7 +19,6 @@
             <li><a href="index.html">Inicio</a></li>
             <li><a href="restaurantes.html">Restaurantes</a></li>
             <li><a href="resenya.html">Reseñas</a></li>
-            <li><a href="favoritos.html">Favoritos</a></li>
             <li><a href="recetas.html">Recetas</a></li>
             <li><a href="contacto.html">Contacto</a></li>
             </ul>
@@ -49,7 +49,6 @@
                 <h3>Tipos de Comida</h3>
                 <ol>
                     <li>Italiana</li>
-                    <li>Mexicana</li>
                     <li>Japonesa</li>
                     <li>Vegana</li>
                 </ol>
@@ -104,25 +103,30 @@
         </div>
     </div>
 
-    <!-- Sección de Novedades -->
-    <section class="novedades"> <!-- NUEVO -->
-        <h2>Últimas Novedades</h2> <!-- NUEVO -->
-        <article> <!-- NUEVO -->
-            <h3>Semana de la Cocina Italiana</h3> <!-- NUEVO -->
-            <p>Del 1 al 7 de junio, varios restaurantes ofrecen menús especiales. ¡No te lo pierdas!</p> <!-- NUEVO -->
-        </article> <!-- NUEVO -->
-        <article> <!-- NUEVO -->
-            <h3>Nueva apertura: SushiZen</h3> <!-- NUEVO -->
-            <p>Un nuevo restaurante japonés abre sus puertas en el centro. Descúbrelo.</p> <!-- NUEVO -->
-        </article> <!-- NUEVO -->
-    </section> <!-- NUEVO -->
 
-    <!-- Sección de Opiniones -->
-    <section class="opiniones"> <!-- NUEVO -->
-        <h2>Opiniones de Usuarios</h2> <!-- NUEVO -->
-        <blockquote>"¡La mejor experiencia culinaria que he tenido! - <strong>Ana P.</strong>"</blockquote> <!-- NUEVO -->
-        <blockquote>"Muy buenas recomendaciones, encontré un lugar excelente. - <strong>Carlos M.</strong>"</blockquote> <!-- NUEVO -->
-    </section> <!-- NUEVO -->
+    <div class="container">
+        <!-- Sección de Opiniones -->
+        <section class="opiniones"> <!-- NUEVO -->
+            <h2>Opiniones de Usuarios</h2>
+            <div class="opiniones_usuarios">
+                <div class="opinion"> <!-- NUEVO -->
+                    <blockquote>"Muy buenas recomendaciones, encontré un lugar excelente. - <strong>Carlos M.</strong>"</blockquote> <!-- NUEVO -->
+                </div>
+                <div class="opinion">
+                    <blockquote>"La plataforma es súper fácil de usar y me ayudó a decidir rápido. - <strong>Lucía G.</strong>"</blockquote>
+                </div>
+                <div class="opinion">
+                <blockquote>"Me encantó la variedad de opciones que encontré, hay para todos los gustos. - <strong>Fernando R.</strong>"</blockquote>
+                </div>
+                <div class="opinion">
+                <blockquote>"Gracias a las opiniones de otros usuarios, fui al mejor restaurante de la zona. - <strong>Diego T.</strong>"</blockquote>
+                </div>
+                <div class="opinion">
+                <blockquote>"La mejor guía para encontrar lugares únicos. Muy recomendada. - <strong>María J.</strong>"</blockquote>
+                </div>
+            </div>
+        </section> <!-- NUEVO -->
+    </div>
 
     <!-- Sección de Mapa con Leaflet -->
     <section class="mapa"> <!-- NUEVO -->
@@ -149,16 +153,40 @@
         </div> <!-- NUEVO -->
     </section> <!-- NUEVO -->
 
+    <!-- Sección de Novedades -->
+     <div class="novedades">
+        <h2>Últimas Novedades</h2>
+        <section class="novedad"> <!-- NUEVO --><!-- NUEVO -->
+            <article> <!-- NUEVO -->
+                <h3>Semana de la Cocina Italiana</h3> <!-- NUEVO -->
+                <p>Del 1 al 7 de junio, varios restaurantes ofrecen menús especiales. ¡No te lo pierdas!</p> <!-- NUEVO -->
+            </article> <!-- NUEVO -->
+            <article> <!-- NUEVO -->
+                <h3>Nueva apertura: SushiZen</h3> <!-- NUEVO -->
+                <p>Un nuevo restaurante japonés abre sus puertas en el centro. Descúbrelo.</p> <!-- NUEVO -->
+            </article> <!-- NUEVO -->
+        </section> <!-- NUEVO -->
+    </div>
 
-    <!-- Pie de página -->
-    <footer class="footer"> <!-- NUEVO -->
-        <p>&copy; 2025 APPeritivo. Todos los derechos reservados.</p> <!-- NUEVO -->
-        <p>Síguenos en: <!-- NUEVO -->
-            <a href="#">Instagram</a> | <!-- NUEVO -->
-            <a href="#">Facebook</a> | <!-- NUEVO -->
-            <a href="#">Twitter</a> <!-- NUEVO -->
-        </p> <!-- NUEVO -->
-    </footer> <!-- NUEVO -->
+    <!-- Comentario agregado: Inicio del footer con información útil -->
+    <footer class="footer"> <!-- Footer agregado -->
+        <div class="footer-container">
+            <p>&copy; 2025 APPeritivo. Todos los derechos reservados.</p> <!-- Comentario agregado: Derechos reservados -->
+            <nav>
+                <a href="politica.html">Política de Privacidad</a> | <!-- Comentario agregado: Enlace a política -->
+                <a href="terminos.html">Términos y Condiciones</a>
+            </nav>
+            <div class="redes-sociales">
+                <!-- Comentario agregado: Íconos simulados para redes sociales -->
+                <p>Síguenos en:
+                    <a href="#">Instagram</a> | 
+                    <a href="#">Facebook</a> | 
+                    <a href="#">Twitter</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Comentario agregado: Fin del footer -->
 
     <hr>
 
@@ -188,7 +216,7 @@
 
     <script>
     // Mapa interactivo con Leaflet
-    const map = L.map('map').setView([38.632090611883335, -0.8621768356768531], 15); // Coordenadas iniciales
+    const map = L.map('map').setView([38.63502157257899, -0.8646776933949197], 15); // Coordenadas iniciales
     
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
