@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Restaurantes</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/imagenes/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/imagenes/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -12,22 +16,59 @@
         <div class="nombre-sitio"><a href="index.html">APPeritivo</a></div> 
         <div class="navegacion"> 
             <ul class="listado"> 
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="restaurantes.html">Restaurantes</a></li>
-                <li><a href="resenya.html">Reseñas</a></li>
-                <li><a href="favoritos.html">Favoritos</a></li>
-                <li><a href="recetas.html">Recetas</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="restaurantes.html">Restaurantes</a></li>
+            <li><a href="resenya.html">Reseñas</a></li>
+            <li><a href="recetas.html">Recetas</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </div> 
     </header>
+
+    <section class="section">
+        <h2>Nuestros Restaurantes Destacados</h2>
+        <div class="columns">
+          
+          <div class="card vegan">
+            <img src="https://media-cdn.tripadvisor.com/media/photo-s/0e/27/79/32/ta-img-20170114-152227.jpg" alt="Restaurante vegano">
+            <div class="card-content">
+              <h3>Los balcones - Cocina Vegana</h3>
+              <p>En la barra del buffet hay platos para todos: Vegetarianos, veganos, crudiveganos, sin gluten, postres sin alérgenos pero con todo el color y sabor. 5 décadas de experiencia nos avalan, hay propuestas deliciosas para todos.</p>
+            </div>
+          </div>
+          
+          <div class="card burger">
+            <img src="https://rodeodiner.com/wp-content/uploads/2023/12/rodeovillenafachada1.jpg" alt="Restaurante de hamburguesas">
+            <div class="card-content">
+              <h3>Rodeo Diner & Burguer</h3>
+              <p>La mejor comida americana y tex mex donde podrás degustar burgers, hot dogs, costillas, entrecots, tacos, quesadillas, sandwiches... todo fundido al carbón</p>
+            </div>
+          </div>
+          
+          <div class="card italian">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipP7bFeeXFGeG6g5VHSdCgfBnRNsWIDc9SXpcMRW" alt="Restaurante italiano">
+            <div class="card-content">
+              <h3>L´Ampadini - Cocina Italiana</h3>
+              <p>Déjate seducir por el aroma tentador de nuestra pasta fresca con carne madurada, la textura delicada de nuestro risotto cremoso con cola de gambón y el sabor intenso de nuestras salsas caseras.</p>
+            </div>
+          </div>
+          
+          <div class="card sushi">
+            <img src="https://natinosushibar.com/wp-content/uploads/2024/10/copia-de-8q9a1782-%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F_optimized-scaled.jpg" alt="Restaurante italiano">
+            <div class="card-content">
+              <h3>Natino Sushi - Cocina Japonesa</h3>
+              <p>En Natino Sushi Bar, te invitamos a descubrir la esencia de Japón a través de la comida, que te lleva al corazón de la auténtica cultura japonesa. Conoceréis a nuestro chef propietario, Natan, y a un equipo increíble, entregado y apasionado por la cocina japonesa.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     <div class="container-restaurante">
         <h1>Restaurantes</h1>
-        <div class="botones">
-           <!--  <button class="btn-detalles" onclick="window.location.href='index.html'">Volver al Inicio</button>  -->
-            <button class="btn-detalles" onclick="window.location.href='newRestaurante.html'">Nuevo Restaurante</button>
+        <div>
+            <button class="btn-detalles" onclick="window.location.href='newRestaurante.html'">Nuevo</button>
         </div>
-        <table>
+        <table border="2px">
             <thead>
                 <tr>
                     <th>#</th>
@@ -41,6 +82,25 @@
             </tbody>
         </table>
     </div>
+
+    <footer class="footer"> <!-- Footer agregado -->
+        <div class="footer-container">
+            <p>&copy; 2025 APPeritivo. Todos los derechos reservados.</p> <!-- Comentario agregado: Derechos reservados -->
+            <nav>
+                <a href="politica.html">Política de Privacidad</a> | <!-- Comentario agregado: Enlace a política -->
+                <a href="terminos.html">Términos y Condiciones</a>
+            </nav>
+            <div class="redes-sociales">
+                <!-- Comentario agregado: Íconos simulados para redes sociales -->
+                <p>Síguenos en:
+                    <a href="#">Instagram</a> | 
+                    <a href="#">Facebook</a> | 
+                    <a href="#">Twitter</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
     <script src="app.js"></script>
 </body>
 </html>

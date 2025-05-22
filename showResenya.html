@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reseña</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/imagenes/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/imagenes/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -12,12 +16,11 @@
         <div class="nombre-sitio"><a href="index.html">APPeritivo</a></div> 
         <div class="navegacion"> 
             <ul class="listado"> 
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="restaurantes.html">Restaurantes</a></li>
-                <li><a href="resenya.html">Reseñas</a></li>
-                <li><a href="favoritos.html">Favoritos</a></li>
-                <li><a href="recetas.html">Recetas</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="restaurantes.html">Restaurantes</a></li>
+            <li><a href="resenya.html">Reseñas</a></li>
+            <li><a href="recetas.html">Recetas</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </div> 
     </header>
@@ -46,6 +49,24 @@
         <br>
         <button class="btn-detalles" onclick="window.history.back()">Volver</button>        
     </div>
+
+    <footer class="footer"> <!-- Footer agregado -->
+        <div class="footer-container">
+            <p>&copy; 2025 APPeritivo. Todos los derechos reservados.</p> <!-- Comentario agregado: Derechos reservados -->
+            <nav>
+                <a href="politica.html">Política de Privacidad</a> | <!-- Comentario agregado: Enlace a política -->
+                <a href="terminos.html">Términos y Condiciones</a>
+            </nav>
+            <div class="redes-sociales">
+                <!-- Comentario agregado: Íconos simulados para redes sociales -->
+                <p>Síguenos en:
+                    <a href="#">Instagram</a> | 
+                    <a href="#">Facebook</a> | 
+                    <a href="#">Twitter</a>
+                </p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         function cargarDetallesReseña(){

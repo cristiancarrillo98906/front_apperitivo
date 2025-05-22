@@ -10,6 +10,10 @@ body {
     background-color: #222;
     color: white;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 .header {
     background-color: #111;
@@ -225,8 +229,8 @@ a:hover {
     text-align: center;
 }
 table {
-    background-color: #aaa;
-    color: white;
+    background-color: #fff;
+    color: #222;
 }
 
 th, td {
@@ -236,6 +240,7 @@ th, td {
 }
 th {
     background-color: #333;
+    color: #fff;
 }
 tfoot {
     background-color: #ff9600;
@@ -347,7 +352,6 @@ tfoot {
     flex-direction: column;
     margin: auto;
     background: white;
-    margin-top: 20vh;
     padding: 30px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     border-radius:12px;
@@ -594,4 +598,83 @@ button.btn-detalles:focus, button.btn-detalles-guardar:hover {
     text-transform: unset;
     text-align: center;
     margin: 20px auto 20px auto;
+}
+.section {
+    max-width: 1400px;
+    margin: 40px auto;
+    margin-top: 10vh;
+    padding: 20px;
+}
+.section h2{
+    text-align: center;
+    color: #ff9600;
+}
+.columns {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1 1 calc(20% - 20px); /* 5 columnas con espacio entre ellas */
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.card p {
+    font-size: 0.95em;
+    color: #555;
+    /*line-height: 1.5;*/
+}
+
+.vegan img {
+    border-top: 5px solid #4CAF50;
+}
+
+.burger img {
+    border-top: 5px solid #f8f528;
+}
+
+.italian img {
+    border-top: 5px solid #00ffff;
+}
+.sushi img {
+    border-top: 5px solid #ff2222;
+}
+@media (max-width: 1200px) {
+    .card { flex: 1 1 calc(33.33% - 20px); }
+}
+
+@media (max-width: 768px) {
+    .card { flex: 1 1 calc(50% - 20px); }
+}
+
+@media (max-width: 500px) {
+    .card { flex: 1 1 100%; }
 }
